@@ -93,7 +93,7 @@ export default class Formatter {
         formattedQuery = this.formatComma(token, formattedQuery);
       } else if (token.value === ':') {
         formattedQuery = this.formatWithSpaceAfter(token, formattedQuery);
-      } else if (token.value === '.') {
+      } else if (token.value === '.' || token.value === '-') {
         formattedQuery = this.formatWithoutSpaces(token, formattedQuery);
       } else if (token.value === ';') {
         formattedQuery = this.formatQuerySeparator(token, formattedQuery);
