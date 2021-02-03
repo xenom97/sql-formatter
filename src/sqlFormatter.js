@@ -1,25 +1,7 @@
-import Db2Formatter from './languages/Db2Formatter';
-import MariaDbFormatter from './languages/MariaDbFormatter';
-import MySqlFormatter from './languages/MySqlFormatter';
-import N1qlFormatter from './languages/N1qlFormatter';
-import PlSqlFormatter from './languages/PlSqlFormatter';
-import PostgreSqlFormatter from './languages/PostgreSqlFormatter';
-import RedshiftFormatter from './languages/RedshiftFormatter';
-import SparkSqlFormatter from './languages/SparkSqlFormatter';
-import StandardSqlFormatter from './languages/StandardSqlFormatter';
-import TSqlFormatter from './languages/TSqlFormatter';
+import SqlFormatter from './languages/SqlFormatter';
 
 const formatters = {
-  db2: Db2Formatter,
-  mariadb: MariaDbFormatter,
-  mysql: MySqlFormatter,
-  n1ql: N1qlFormatter,
-  plsql: PlSqlFormatter,
-  postgresql: PostgreSqlFormatter,
-  redshift: RedshiftFormatter,
-  spark: SparkSqlFormatter,
-  sql: StandardSqlFormatter,
-  tsql: TSqlFormatter,
+  sql: SqlFormatter,
 };
 
 /**
@@ -39,7 +21,7 @@ export const format = (query, cfg = {}) => {
     throw new Error('Invalid query argument. Extected string, instead got ' + typeof query);
   }
 
-  let Formatter = StandardSqlFormatter;
+  let Formatter = SqlFormatter;
   if (cfg.language !== undefined) {
     Formatter = formatters[cfg.language];
   }
