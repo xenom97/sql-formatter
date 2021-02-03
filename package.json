@@ -62,13 +62,13 @@
     "pretty": "prettier --write .",
     "pretty:check": "prettier --check .",
     "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "check": "npm run pretty:check && npm run lint && npm run test",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "test:watch": "yarn test -- --watch",
+    "check": "yarn pretty:check && yarn lint && yarn test",
+    "build": "yarn build:commonjs && yarn build:umd && yarn build:umd:min",
     "build:commonjs": "babel src --out-dir lib",
     "build:umd": "webpack --config webpack.dev.js",
     "build:umd:min": "webpack --config webpack.prod.js",
-    "prepare": "npm run clean && npm run check && npm run build"
+    "prepare": "yarn clean && yarn check && yarn build"
   },
   "repository": {
     "type": "git",
