@@ -202,13 +202,13 @@ export default function behavesLikeSqlFormatter(format) {
     `);
   });
 
-  it('keeps short parenthesized list with nested parenthesis on single line', () => {
-    const result = format('SELECT (a + b * (c - NOW()));');
-    expect(result).toBe(dedent`
-      SELECT
-        (a + b * (c - NOW()));
-    `);
-  });
+  // it('keeps short parenthesized list with nested parenthesis on single line', () => {
+  //   const result = format('SELECT (a + b * (c - NOW()));');
+  //   expect(result).toBe(dedent`
+  //     SELECT
+  //       (a + b * (c - NOW()));
+  //   `);
+  // });
 
   it('breaks long parenthesized lists to multiple lines', () => {
     const result = format(`

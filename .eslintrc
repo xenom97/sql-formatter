@@ -17,6 +17,5 @@
   },
   "env": {
     "jest": true
-  },
-  "root": true
+  }
 }
